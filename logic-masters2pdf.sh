@@ -16,7 +16,7 @@ else
 	output="$2"
 fi
 
-url="https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?print=true&id=$id"
+url="https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?chlang=en&print=true&id=$id"
 
 wkhtmltopdf $url $output && echo $output
 
