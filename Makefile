@@ -1,6 +1,13 @@
-.PHONY: all
+.PHONY: all install uninstall
 
-all :
-	! ln ./logic-masters2pdf.sh ~/bin/logic-masters2pdf
-	! ln ./rmpuzzle.sh ~/bin/rmpuzzle
+INSTALL_PATH?=/usr/local/bin
+
+all : install
+
+install :
+	! ln ./logic-masters2pdf.sh ${INSTALL_PATH}/logic-masters2pdf
+	! ln ./rmpuzzle.sh ${INSTALL_PATH}/rmpuzzle
 	! rmapi mkdir /Puzzles
+
+uninstall :
+	${RM} ${INSTALL_PATH}/logic-masters2pdf ${INSTALL_PATH}/rmpuzzle
